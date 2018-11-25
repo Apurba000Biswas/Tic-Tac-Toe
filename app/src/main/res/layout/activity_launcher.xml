@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <GridLayout
         android:layout_width="match_parent"
-        android:columnCount="1"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:columnCount="1">
 
 
         <!--First row-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_height="match_parent">
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/tv_fist_row_1"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/circle"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_fist_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_fist_row_3"
-                android:background="@drawable/circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/circle"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
         </LinearLayout>
 
 
@@ -48,81 +55,113 @@
         <!--Second Row-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:layout_height="match_parent">
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/tv_second_row_1"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/circle"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_second_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_second_row_3"
-                android:background="@drawable/circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/circle"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
         </LinearLayout>
 
 
         <!--Third Row-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center"
+            android:layout_height="match_parent"
             android:layout_marginTop="8dp"
-            android:layout_height="match_parent">
+            android:gravity="center"
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/tv_third_row_1"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/circle"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_third_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_third_row_3"
-                android:background="@drawable/circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/circle"
                 android:gravity="center"
-                android:text="hasdhjashdj" />
+                android:textColor="@color/Applevel"
+                android:textSize="24sp" />
         </LinearLayout>
 
     </GridLayout>
 
     <TextView
         android:id="@+id/tv_instruction"
-        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="18sp"
+        android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/Applevel"
-        android:layout_height="wrap_content"
-        android:text="Instruction"/>
+        android:textSize="18sp" />
+    <!-- A CardView that contains a TextView -->
+
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv_new_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            card_view:cardCornerRadius="14dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/circleColor"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="14dp"
+                android:text="@string/start_new_game"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.CardView>
 
 
 
 </LinearLayout>
+</ScrollView>
+

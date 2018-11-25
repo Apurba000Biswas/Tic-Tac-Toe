@@ -6,28 +6,40 @@ import android.widget.TextView;
 import com.example.apurba.tic_tac_toe.Activity.LauncherActivity;
 import com.example.apurba.tic_tac_toe.R;
 
+import java.util.Random;
+
 public class TicTacToeGamePlay implements View.OnClickListener{
     private static final String INSTRUCTION_X = "Its X's turn";
     private static final String INSTRUCTION_O = "Its O's turn";
-    private static final String INSTRUCTION_START = "Please select one of the 9 buttons\n" +
-            "First player's symbol 'X',Second player's symbol 'O'";
     private static final String INSTRUCTION_LOCKED = "This button is locked";
     private static final String INSTRUCTION_X_WINNER = "X is WINNER!";
     private static final String INSTRUCTION_O_WINNER = "O is WINNER!";
     private static final String INSTRUCTION_NO_WINNER = "Game Ended, No one is Winner!";
     private static final String INSTRUCTION_BOTH_WINNER = "Both are Winner!";
+    private static final String INSTRUCTION_FIRST_P_SYMBOL = "First Player's Symbol";
 
     private int[][] gamePlayGrid;
     private TextView mInstructionTv;
     private int playerSelected;
-    private int lokedButton;
+    private int lockedButton;
 
     public TicTacToeGamePlay(TextView instructionTv){
         setGamePlayGrid();
         mInstructionTv = instructionTv;
-        playerSelected = 1;
-        mInstructionTv.setText(INSTRUCTION_START);
-        lokedButton = 0;
+        setPlayerSelection();
+        lockedButton = 0;
+    }
+
+    private void setPlayerSelection(){
+        Random rand = new Random();
+        boolean firstSlectionKey = rand.nextBoolean();
+        if (firstSlectionKey){
+            playerSelected = 1;
+            mInstructionTv.setText(INSTRUCTION_FIRST_P_SYMBOL + " 'X'");
+        }else{
+            mInstructionTv.setText(INSTRUCTION_FIRST_P_SYMBOL + " 'O'");
+            playerSelected = 2;
+        }
     }
 
     private void setGamePlayGrid(){
@@ -138,7 +150,7 @@ public class TicTacToeGamePlay implements View.OnClickListener{
     }
 
     private void checkForGameEnd(){
-       if (lokedButton == 9){
+       if (lockedButton == 9){
             String resultSameRow = checkForSameRowValue();
             String resultSameCol = checkForSameColumnValues();
             String resultFirstDiagonal = checkForSameFirstDiagonalValues();
@@ -259,6 +271,6 @@ public class TicTacToeGamePlay implements View.OnClickListener{
             playerSelected = 1;
             mInstructionTv.setText(INSTRUCTION_X);
         }
-        lokedButton++;
+        lockedButton++;
     }
 }

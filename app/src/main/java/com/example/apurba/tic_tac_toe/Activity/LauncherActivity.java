@@ -1,6 +1,5 @@
 package com.example.apurba.tic_tac_toe.Activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
