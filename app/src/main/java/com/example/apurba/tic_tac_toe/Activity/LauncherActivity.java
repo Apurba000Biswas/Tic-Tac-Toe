@@ -23,6 +23,8 @@ public class LauncherActivity extends AppCompatActivity {
     private static TextView mThirdRowSecondTv;
     private static TextView mThirdRowThirdTv;
 
+    private TextView mInstructionTv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,6 @@ public class LauncherActivity extends AppCompatActivity {
 
         initializeButtons();
         setAnimation();
-        //setGamePlayGrid();
         playGame();
     }
 
@@ -48,6 +49,8 @@ public class LauncherActivity extends AppCompatActivity {
         mThirdRowFirstTv = findViewById(R.id.tv_third_row_1);
         mThirdRowSecondTv = findViewById(R.id.tv_third_row_2);
         mThirdRowThirdTv = findViewById(R.id.tv_third_row_3);
+
+        mInstructionTv = findViewById(R.id.tv_instruction);
     }
 
     private void setAnimation(){
@@ -64,7 +67,7 @@ public class LauncherActivity extends AppCompatActivity {
 
 
     private void playGame(){
-        TicTacToeGamePlay play = new TicTacToeGamePlay();
+        TicTacToeGamePlay play = new TicTacToeGamePlay(mInstructionTv);
         setClickListener(play);
     }
 
@@ -79,7 +82,73 @@ public class LauncherActivity extends AppCompatActivity {
         mThirdRowSecondTv.setOnClickListener(play);
         mThirdRowThirdTv.setOnClickListener(play);
     }
-    public static void setmFirstRowFirstTv() {
-       mFirstRowFirstTv.setText("");
+
+
+    public static void lockTheButton(int buttonNo, boolean isFirstPlayer){
+        switch (buttonNo){
+            case 1:
+                if (isFirstPlayer){
+                    mFirstRowFirstTv.setText("X");
+                }else{
+                    mFirstRowFirstTv.setText("O");
+                }
+                break;
+            case 2:
+                if (isFirstPlayer){
+                    mFirstRowSecondTv.setText("X");
+                }else{
+                    mFirstRowSecondTv.setText("O");
+                }
+                break;
+            case 3:
+                if (isFirstPlayer){
+                    mFirstRowThirdTv.setText("X");
+                }else{
+                    mFirstRowThirdTv.setText("O");
+                }
+                break;
+            case 4:
+                if (isFirstPlayer){
+                    mSecondRowFirstTv.setText("X");
+                }else{
+                    mSecondRowFirstTv.setText("O");
+                }
+                break;
+            case 5:
+                if (isFirstPlayer){
+                    mSecondRowSecondTv.setText("X");
+                }else{
+                    mSecondRowSecondTv.setText("O");
+                }
+                break;
+            case 6:
+                if (isFirstPlayer){
+                    mSecondRowThirdTv.setText("X");
+                }else{
+                    mSecondRowThirdTv.setText("O");
+                }
+                break;
+            case 7:
+                if (isFirstPlayer){
+                    mThirdRowFirstTv.setText("X");
+                }else{
+                    mThirdRowFirstTv.setText("O");
+                }
+                break;
+            case 8:
+                if (isFirstPlayer){
+                    mThirdRowSecondTv.setText("X");
+                }else{
+                    mThirdRowSecondTv.setText("O");
+                }
+                break;
+            case 9:
+                if (isFirstPlayer){
+                    mThirdRowThirdTv.setText("X");
+                }else{
+                    mThirdRowThirdTv.setText("O");
+                }
+                break;
+        }
     }
 }
