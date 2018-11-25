@@ -2,6 +2,8 @@ package com.example.apurba.tic_tac_toe.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -23,6 +25,7 @@ public class LauncherActivity extends AppCompatActivity {
     private static TextView mThirdRowThirdTv;
 
     private TextView mInstructionTv;
+    private CardView mNewGameButton;
 
 
     @Override
@@ -34,6 +37,33 @@ public class LauncherActivity extends AppCompatActivity {
         initializeButtons();
         setAnimation();
         playGame();
+        setNewGameButton();
+    }
+
+    private void setNewGameButton(){
+        mNewGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearText();
+                setAnimation();
+                playGame();
+            }
+        });
+    }
+
+    private void clearText(){
+        mFirstRowFirstTv.setText("");
+        mFirstRowSecondTv.setText("");
+        mFirstRowThirdTv.setText("");
+
+        mSecondRowFirstTv.setText("");
+        mSecondRowSecondTv.setText("");
+        mSecondRowThirdTv.setText("");
+
+        mThirdRowFirstTv.setText("");
+        mThirdRowSecondTv.setText("");
+        mThirdRowThirdTv.setText("");
+        mInstructionTv.setTextSize(18);
     }
 
     private void initializeButtons(){
@@ -50,6 +80,7 @@ public class LauncherActivity extends AppCompatActivity {
         mThirdRowThirdTv = findViewById(R.id.tv_third_row_3);
 
         mInstructionTv = findViewById(R.id.tv_instruction);
+        mNewGameButton = findViewById(R.id.cv_new_game);
     }
 
     private void setAnimation(){
@@ -62,6 +93,7 @@ public class LauncherActivity extends AppCompatActivity {
         CustomStyle.setBottomRightAnimationToTextView(this, mThirdRowFirstTv);
         CustomStyle.setBottomRightAnimationToTextView(this, mThirdRowSecondTv);
         CustomStyle.setBottomRightAnimationToTextView(this, mThirdRowThirdTv);
+        CustomStyle.setUpAnimationToCard(this, mNewGameButton);
     }
 
 

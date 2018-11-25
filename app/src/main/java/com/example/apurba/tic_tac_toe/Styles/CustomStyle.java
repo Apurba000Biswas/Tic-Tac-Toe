@@ -2,6 +2,7 @@ package com.example.apurba.tic_tac_toe.Styles;
 
 import android.support.v7.app.ActionBar;
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -44,5 +45,11 @@ public class CustomStyle {
         final Animation tvAnimation = AnimationUtils.loadAnimation(context, R.anim.slide_botom_right);
         tvAnimation.setDuration(800);
         textView.startAnimation(tvAnimation);
+    }
+
+    public static void setUpAnimationToCard(Context context, CardView cvNewGame){
+        final Animation cvAnimation = AnimationUtils.loadAnimation(context, R.anim.slide_up);
+        cvAnimation.setDuration(800);
+        cvNewGame.startAnimation(cvAnimation);
     }
 }

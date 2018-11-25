@@ -250,6 +250,7 @@ public class TicTacToeGamePlay implements View.OnClickListener{
                 mInstructionTv.setText(INSTRUCTION_BOTH_WINNER);
                 break;
         }
+        mInstructionTv.setTextSize(34);
     }
 
     private boolean isLocked(int row, int col){
