@@ -40,7 +40,7 @@ public class CustomStyle {
         textView.startAnimation(tvAnimation);
     }
 
-    public static void setBotomRightAnimationToTextView(Context context, TextView textView){
+    public static void setBottomRightAnimationToTextView(Context context, TextView textView){
         final Animation tvAnimation = AnimationUtils.loadAnimation(context, R.anim.slide_botom_right);
         tvAnimation.setDuration(800);
         textView.startAnimation(tvAnimation);

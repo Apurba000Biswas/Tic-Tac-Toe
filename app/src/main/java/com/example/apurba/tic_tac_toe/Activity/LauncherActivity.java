@@ -1,24 +1,27 @@
 package com.example.apurba.tic_tac_toe.Activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 
+import com.example.apurba.tic_tac_toe.Play.TicTacToeGamePlay;
 import com.example.apurba.tic_tac_toe.Styles.CustomStyle;
 import com.example.apurba.tic_tac_toe.R;
 
+
 public class LauncherActivity extends AppCompatActivity {
 
-    private TextView mFirstRowFirstTv;
-    private TextView mFirstRowSecondTv;
-    private TextView mFirstRowThirdTv;
-    private TextView mSecondRowFirstTv;
-    private TextView mSecondRowSecondTv;
-    private TextView mSecondRowThirdTv;
-    private TextView mThirdRowFirstTv;
-    private TextView mThirdRowSecondTv;
-    private TextView mThirdRowThirdTv;
+    private static TextView mFirstRowFirstTv;
+    private static TextView mFirstRowSecondTv;
+    private static TextView mFirstRowThirdTv;
+    private static TextView mSecondRowFirstTv;
+    private static TextView mSecondRowSecondTv;
+    private static TextView mSecondRowThirdTv;
+    private static TextView mThirdRowFirstTv;
+    private static TextView mThirdRowSecondTv;
+    private static TextView mThirdRowThirdTv;
 
 
     @Override
@@ -29,7 +32,8 @@ public class LauncherActivity extends AppCompatActivity {
 
         initializeButtons();
         setAnimation();
-
+        //setGamePlayGrid();
+        playGame();
     }
 
     private void initializeButtons(){
@@ -53,9 +57,29 @@ public class LauncherActivity extends AppCompatActivity {
         CustomStyle.setLeftAnimationToTextView(this, mSecondRowFirstTv);
         CustomStyle.setLeftAnimationToTextView(this, mSecondRowSecondTv);
         CustomStyle.setLeftAnimationToTextView(this, mSecondRowThirdTv);
-        CustomStyle.setBotomRightAnimationToTextView(this, mThirdRowFirstTv);
-        CustomStyle.setBotomRightAnimationToTextView(this, mThirdRowSecondTv);
-        CustomStyle.setBotomRightAnimationToTextView(this, mThirdRowThirdTv);
+        CustomStyle.setBottomRightAnimationToTextView(this, mThirdRowFirstTv);
+        CustomStyle.setBottomRightAnimationToTextView(this, mThirdRowSecondTv);
+        CustomStyle.setBottomRightAnimationToTextView(this, mThirdRowThirdTv);
     }
 
+
+    private void playGame(){
+        TicTacToeGamePlay play = new TicTacToeGamePlay();
+        setClickListener(play);
+    }
+
+    public void setClickListener(TicTacToeGamePlay play){
+        mFirstRowFirstTv.setOnClickListener(play);
+        mFirstRowSecondTv.setOnClickListener(play);
+        mFirstRowThirdTv.setOnClickListener(play);
+        mSecondRowFirstTv.setOnClickListener(play);
+        mSecondRowSecondTv.setOnClickListener(play);
+        mSecondRowThirdTv.setOnClickListener(play);
+        mThirdRowFirstTv.setOnClickListener(play);
+        mThirdRowSecondTv.setOnClickListener(play);
+        mThirdRowThirdTv.setOnClickListener(play);
+    }
+    public static void setmFirstRowFirstTv() {
+       mFirstRowFirstTv.setText("");
+    }
 }
