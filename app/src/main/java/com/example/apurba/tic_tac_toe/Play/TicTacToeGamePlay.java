@@ -1,10 +1,12 @@
 package com.example.apurba.tic_tac_toe.Play;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.apurba.tic_tac_toe.Activity.LauncherActivity;
 import com.example.apurba.tic_tac_toe.R;
+import com.example.apurba.tic_tac_toe.Styles.CustomStyle;
 
 import java.util.Random;
 
@@ -22,10 +24,12 @@ public class TicTacToeGamePlay implements View.OnClickListener{
     private TextView mInstructionTv;
     private int playerSelected;
     private int lockedButton;
+    private Context mContext;
 
-    public TicTacToeGamePlay(TextView instructionTv){
+    public TicTacToeGamePlay(TextView instructionTv, Context context){
         setGamePlayGrid();
         mInstructionTv = instructionTv;
+        mContext = context;
         setPlayerSelection();
         lockedButton = 0;
     }
@@ -36,8 +40,10 @@ public class TicTacToeGamePlay implements View.OnClickListener{
         if (firstSlectionKey){
             playerSelected = 1;
             mInstructionTv.setText(INSTRUCTION_FIRST_P_SYMBOL + " 'X'");
+            CustomStyle.setFadeIntAnimationToTextView(mContext, mInstructionTv);
         }else{
             mInstructionTv.setText(INSTRUCTION_FIRST_P_SYMBOL + " 'O'");
+            CustomStyle.setFadeIntAnimationToTextView(mContext, mInstructionTv);
             playerSelected = 2;
         }
     }
@@ -165,6 +171,7 @@ public class TicTacToeGamePlay implements View.OnClickListener{
                 declareWinner(resultSecondDiagonal);
             }else{
                 mInstructionTv.setText(INSTRUCTION_NO_WINNER);
+                CustomStyle.setFadeIntAnimationToTextView(mContext, mInstructionTv);
             }
        }
     }
@@ -251,6 +258,7 @@ public class TicTacToeGamePlay implements View.OnClickListener{
                 break;
         }
         mInstructionTv.setTextSize(34);
+        CustomStyle.setScaleAnimationToTextView(mContext, mInstructionTv);
     }
 
     private boolean isLocked(int row, int col){
@@ -258,6 +266,7 @@ public class TicTacToeGamePlay implements View.OnClickListener{
             return false;
         }else{
             mInstructionTv.setText(INSTRUCTION_LOCKED);
+            CustomStyle.setFadeIntAnimationToTextView(mContext, mInstructionTv);
             return true;
         }
     }
@@ -267,10 +276,12 @@ public class TicTacToeGamePlay implements View.OnClickListener{
             gamePlayGrid[row][col] = 1;
             playerSelected = 2;
             mInstructionTv.setText(INSTRUCTION_O);
+            CustomStyle.setFadeIntAnimationToTextView(mContext, mInstructionTv);
         }else if (playerSelected == 2){
             gamePlayGrid[row][col] = 2;
             playerSelected = 1;
             mInstructionTv.setText(INSTRUCTION_X);
+            CustomStyle.setFadeIntAnimationToTextView(mContext, mInstructionTv);
         }
         lockedButton++;
     }

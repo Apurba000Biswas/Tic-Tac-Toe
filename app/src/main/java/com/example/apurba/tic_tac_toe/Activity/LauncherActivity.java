@@ -24,7 +24,7 @@ public class LauncherActivity extends AppCompatActivity {
     private static TextView mThirdRowSecondTv;
     private static TextView mThirdRowThirdTv;
 
-    private TextView mInstructionTv;
+    private static TextView  mInstructionTv;
     private CardView mNewGameButton;
 
 
@@ -97,8 +97,9 @@ public class LauncherActivity extends AppCompatActivity {
     }
 
 
+
     private void playGame(){
-        TicTacToeGamePlay play = new TicTacToeGamePlay(mInstructionTv);
+        TicTacToeGamePlay play = new TicTacToeGamePlay(mInstructionTv, this);
         setClickListener(play);
     }
 

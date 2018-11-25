@@ -52,4 +52,15 @@ public class CustomStyle {
         cvAnimation.setDuration(800);
         cvNewGame.startAnimation(cvAnimation);
     }
+
+    public static void setFadeIntAnimationToTextView(Context context, TextView textView){
+        final Animation tvAnimation = AnimationUtils.loadAnimation(context, R.anim.fade_in);
+        tvAnimation.setDuration(600);
+        textView.startAnimation(tvAnimation);
+    }
+    public static void setScaleAnimationToTextView(Context context, TextView textView){
+        final Animation tvAnimation = AnimationUtils.loadAnimation(context, R.anim.scale);
+        tvAnimation.setDuration(500);
+        textView.startAnimation(tvAnimation);
+    }
 }
