@@ -116,66 +116,66 @@ public class LauncherActivity extends AppCompatActivity {
     }
 
 
-    public static void lockTheButton(int buttonNo, boolean isFirstPlayer){
+    public static void lockTheButton(int buttonNo, boolean isPlayerX){
         switch (buttonNo){
             case 1:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mFirstRowFirstTv.setText("X");
                 }else{
                     mFirstRowFirstTv.setText("O");
                 }
                 break;
             case 2:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mFirstRowSecondTv.setText("X");
                 }else{
                     mFirstRowSecondTv.setText("O");
                 }
                 break;
             case 3:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mFirstRowThirdTv.setText("X");
                 }else{
                     mFirstRowThirdTv.setText("O");
                 }
                 break;
             case 4:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mSecondRowFirstTv.setText("X");
                 }else{
                     mSecondRowFirstTv.setText("O");
                 }
                 break;
             case 5:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mSecondRowSecondTv.setText("X");
                 }else{
                     mSecondRowSecondTv.setText("O");
                 }
                 break;
             case 6:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mSecondRowThirdTv.setText("X");
                 }else{
                     mSecondRowThirdTv.setText("O");
                 }
                 break;
             case 7:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mThirdRowFirstTv.setText("X");
                 }else{
                     mThirdRowFirstTv.setText("O");
                 }
                 break;
             case 8:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mThirdRowSecondTv.setText("X");
                 }else{
                     mThirdRowSecondTv.setText("O");
                 }
                 break;
             case 9:
-                if (isFirstPlayer){
+                if (isPlayerX){
                     mThirdRowThirdTv.setText("X");
                 }else{
                     mThirdRowThirdTv.setText("O");
